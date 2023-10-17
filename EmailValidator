@@ -1,0 +1,29 @@
+class Validator {
+    static validateEmail(email) {
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      return emailRegex.test(email);
+    }
+  
+    static validatePassword(password) {
+      const passwordRegex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+      return passwordRegex.test(password);
+    }
+  }
+  
+  // Prompt the user for email and password
+  const userEmail = prompt("Enter your email address:");
+  const userPassword = prompt("Enter your password:");
+  
+  // Validate email
+  if (Validator.validateEmail(userEmail)) {
+    console.log("Email is valid.");
+  } else {
+    console.log("Email is not valid.");
+  }
+  
+  //validate password 
+  if (Validator.validatePassword(userPassword)) {
+    console.log("Password is strong.");
+  } else {
+    console.log("Password is weak.");
+  }
