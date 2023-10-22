@@ -94,14 +94,13 @@ class Student {
   }
 }
 
-// Example usage:
-
+// Example usage
 // Create library items
-   const book1 = new Book("The Catcher in the Rye", "J.D. Salinger", "978-0-316-76948-0", 277);
-   const dvd1 = new DVD("Inception", "Christopher Nolan", "2010", 148);
+   const book1 = new Book("Introduction to python", "J.D. Salinger", "978-0-316-76948-0", 277);
+   const dvd1 = new DVD("Programming", "Christopher Nolan", "2010", 148);
 
 // Create a student
-   const student1 = new Student("Alice", "S12345");
+   const student1 = new Student("Tania", "S12345");
 
 // Check out items
    student1.checkOutItem(book1);
