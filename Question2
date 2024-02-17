@@ -1,0 +1,29 @@
+//function 
+arr = [1, 1, 3, 2, 3, 2, 2, 4, 4]
+majority_element = find_majority_element(arr)
+if majority_element:
+    print("Majority element is:", majority_element)
+else:
+    print("No majority element found.")def find_majority_element(nums):
+    candidate = None
+    count = 0
+    
+    for num in nums:
+        if count == 0:
+            candidate = num
+            count = 1
+        elif candidate == num:
+            count += 1
+        else:
+            count -= 1
+  
+    #Verification 
+    count = 0
+    for num in nums:
+        if num == candidate:
+            count += 1
+            
+    if count > len(nums) // 2:
+        return candidate
+    else:
+        return None
