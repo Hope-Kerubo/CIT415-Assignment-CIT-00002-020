@@ -1,0 +1,31 @@
+class Animal:
+    def __init__(self, name, num_legs):
+        self.name = name
+        self.num_legs = num_legs
+
+class Farm:
+    def __init__(self):
+        self.animals = []
+
+    def add_animal(self, animal):
+        self.animals.append(animal)
+
+    def count_legs(self):
+        total_legs = 0
+        for animal in self.animals:
+            total_legs += animal.num_legs
+        return total_legs
+
+# Example
+farm = Farm()
+
+# Adding animals
+farm.add_animal(Animal("Cow", 4))
+farm.add_animal(Animal("Chicken", 2))
+farm.add_animal(Animal("Horse", 4))
+farm.add_animal(Animal("Sheep", 4))
+farm.add_animal(Animal("Dog", 4))
+
+# Counting animal legs 
+total_legs = farm.count_legs()
+print("Total number of legs on the farm:", total_legs)
