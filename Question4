@@ -1,0 +1,25 @@
+class ArrayCompressor:
+    def __init__(self, array):
+        self.array = array
+
+    def compress(self):
+        compressed_string = ""
+        count = 1
+        for i in range(1, len(self.array)):
+            if self.array[i] == self.array[i - 1]:
+                count += 1
+            else:
+                compressed_string += str(self.array[i - 1]) + str(count)
+                count = 1
+        compressed_string += str(self.array[-1]) + str(count)
+        return compressed_string
+
+# Ask user for input
+input_array = input("Enter the array elements and separate by spaces: ")
+try:
+    arr = list(map(int, input_array.split()))
+    compressor = ArrayCompressor(arr)
+    compressed_str = compressor.compress()
+    print("Compressed string:", compressed_str)
+except ValueError:
+    print("Invalid input. Separate integers by spaces.")
