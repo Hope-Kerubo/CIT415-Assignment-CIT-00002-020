@@ -1,0 +1,31 @@
+from datetime import datetime
+
+class Date:
+    def __init__(self, year, month, day):
+        self.date = datetime(year, month, day)
+
+    def difference(self, other_date):
+        if not isinstance(other_date, Date):
+            raise ValueError("Argument must be a Date object")
+        return abs((self.date - other_date.date).days)
+
+# asking user for dates
+def get_date_input():
+    while True:
+        try:
+            year = int(input("Enter year: "))
+            month = int(input("Enter month: "))
+            day = int(input("Enter day: "))
+            return Date(year, month, day)
+        except ValueError:
+            print("Invalid input. Please enter valid integers.")
+
+# user input
+print("Enter details for first date:")
+date1 = get_date_input()
+print("\nEnter details for second date:")
+date2 = get_date_input()
+
+# getting the difference 
+difference = date1.difference(date2)
+print("\nDifference in days:", difference)
