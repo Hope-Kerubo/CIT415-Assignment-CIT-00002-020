@@ -1,0 +1,19 @@
+class Stutter:
+    def __init__(self):
+        pass
+
+    def stutter_word(self, word):
+        if len(word) < 2:
+            return word + "..."
+        else:
+            stuttered_word = word[:2] + "... " + word[:2] + "... " + word + "?"
+            return stuttered_word
+
+# instantiating stutter class
+stutter = Stutter()
+
+# user input
+word = input("Enter a word: ")
+
+stuttered_word = stutter.stutter_word(word)
+print(stuttered_word)
