@@ -1,0 +1,19 @@
+class Pie:
+    def __init__(self, pie_slices):
+        self.pie_slices = pie_slices
+
+    def can_split_equally(self, num_people):
+        total_slices = sum(self.pie_slices)
+        if total_slices % num_people != 0:
+            return False
+        target_slices = total_slices
+        for slices in self.pie_slices:
+            if slices < target_slices:
+                return False
+        return True
+
+# Example
+pie_slices = [3, 9, 12]
+pie = Pie(pie_slices)
+num_people = 5 
+print(pie.can_split_equally(num_people))
