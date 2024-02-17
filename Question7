@@ -1,0 +1,17 @@
+import math
+
+class Pizza:
+    def __init__(self, radius, height):
+        self.radius = radius
+        self.height = height
+        
+    def calculate_volume(self):
+        return math.pi * self.radius ** 2 * self.height
+    
+# Example usage:
+radius = float(input("Enter the radius of the pizza (in inches): "))
+height = float(input("Enter the height of the pizza (in inches): "))
+
+pizza = Pizza(radius, height)
+volume = pizza.calculate_volume()
+print("The volume of the pizza is:", volume, "cubic inches")
